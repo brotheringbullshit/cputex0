@@ -1,7 +1,7 @@
 # cputex0
 shittiest Cortex-M0 emulator made by ChakGPT (dont mind the name i ran out of ideas)
 
-also, if you find som sort of bug or something, then chances are: it will never happen because of me being the lazy piece that i am, and may or *may* not get very quickly get abandoned like all of my other repos
+also, if you find som sort of bug or something, then chances are: it will never happen because of me being the lazy piece of shit that i am, and may or *may* not get very quickly get abandoned like all of my other repos
 # why
 yes again
 
