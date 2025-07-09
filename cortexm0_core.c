@@ -166,6 +166,12 @@ M0Status m0_step(CortexM0 *cpu, m0_mem_fetch_fn fetch, m0_mem_access_fn mem) {
         return M0_OK;
     }
 
+    if ((op & 0xFF00) == 0xDF00) { // SVC #imm
+    uint8_t imm = op & 0xFF;
+    (void)imm; // optional: you could store it in a register or handler
+    return m0_exception(cpu, 11, mem); // Exception vector 11 is SVC
+    }
+
     // Unknown opcode — trigger HardFault
     return m0_exception(cpu, 3, mem);
 }
