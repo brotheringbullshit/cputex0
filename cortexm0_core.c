@@ -172,6 +172,12 @@ M0Status m0_step(CortexM0 *cpu, m0_mem_fetch_fn fetch, m0_mem_access_fn mem) {
     return m0_exception(cpu, 11, mem); // Exception vector 11 is SVC
     }
 
+    if ((op & 0xFF87) == 0x4700) { // BX Rs
+    uint8_t rs = (op >> 3) & 0xF;
+    set_pc(cpu, cpu->regs[rs]);
+    return M0_OK;
+    }
+
     // Unknown opcode — trigger HardFault
     return m0_exception(cpu, 3, mem);
 }
